@@ -7,7 +7,9 @@ import pickle
 
 # Load the trained model
 
-model =  tf.keras.models.load_model("model.h5")
+model = tf.keras.models.load_model("model.h5", compile=False)
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
 
 
 # Load the encoders and scaler
